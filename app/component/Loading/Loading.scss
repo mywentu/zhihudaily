@@ -1,0 +1,51 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: #17181A;
+
+    .zh-img {
+        height: 90vh;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .zh-quote {
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        .zh-logo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 20px;
+
+            img {
+                height: 80px;
+                width: 80px;
+            }
+        }
+
+        .zh-zhihudaily {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 10px;
+
+            h1 {
+                margin-bottom: 0;
+                color: #C2C4CC;
+
+            }
+
+            h3 {
+                margin-top: 5px;
+                color: #86888D;
+            }
+        }
+    }
+}
