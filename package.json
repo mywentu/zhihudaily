@@ -43,8 +43,10 @@
   "dependencies": {
     "better-npm-run": "0.0.8",
     "bootstrap": "^3.3.6",
+    "node-sass": "^3.11.1",
     "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react-dom": "^0.14.7",
+    "sass-loader": "^4.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.7.2",
