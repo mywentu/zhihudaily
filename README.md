@@ -1,65 +1,30 @@
-# 基于React + Webpack + Babel的项目脚手架
+# 知乎日报 React.js
+## 简介
+> 本项目用`react.js`,`redux`,`Material-UI`开发的知乎日报
+采用了`Webpack`作为构建工具，`fetch`和`redux-thunk`作为异步抓取
 
-> 这个脚手架工程模板用于快速启动基于React + Webpack为技术栈的前端项目
+## 主要功能
+- 知乎日报每日启动图片
+- 夜间模式和日间模式的转换
+- 添加中。。
 
-**Features：**
+## API
+- 知乎日报API使用的是[izzyleung发表的知乎日报 API 分析](https://github.com/izzyleung/ZhihuDailyPurify/wiki/%E7%9F%A5%E4%B9%8E%E6%97%A5%E6%8A%A5-API-%E5%88%86%E6%9E%90)
 
-- 可以解析JSX语法
-- 可以解析ES6语法新特性
-- 支持LESS预处理器
-- 编译完成自动打开浏览器
-- 区分开发环境和生产环境
-- 实现组件级热更新
-- 实现代码的热替换，浏览器实时刷新查看效果
-- 分离业务功能代码和公共依赖代码
-- 单独分离CSS样式文件
-- 支持编译HTML模板
-- 支持文件MD5戳，解决文件缓存问题
-- 支持图片、图标字体等资源的编译
-- 支持浏览器源码调试
-- 可以进行代码规则校验
-- 支持mocha测试用例运行
-- 支持一行命令产出待部署资源
+- 知乎日报图片防盗链使用的是[GaryChangCN](https://github.com/GaryChangCN/zhihu-daily-byVuejs)
+服务器提供的图片盗链处理
 
-## 1. start
+- UI使用的[Material-UI](http://www.material-ui.com/),目前是React.js开源组件库中最受欢迎的
 
-```
-$ git clone git@github.com:GuoYongfeng/webpack-dev-boilerplate.git
-$ cd webpack-dev-boilerplate
+## React脚手架
+本项目使用的脚架是[GuoYongfeng/webpack-dev-boilerplate](https://github.com/GuoYongfeng/webpack-dev-boilerplate)
+，我在其webpack中添加了对`scss`的支持。脚手架具体的特性去看大神的Github
+
+## 运行
+想要在本地运行,执行以下命令行,执行完后将会自动打开浏览器，就阔以啦。
+```ssh
+$ git clone http://www.ifajiao.com:14930/wenbin/zhihudaily.git
+$ cd react-zhihudaily
 $ npm install
-```
-## 2. dev
-### 2.1 开发调试
-```
 $ npm run dev
 ```
-
-查看效果` http://127.0.0.1:8080`
-
-### 2.2 代码检查
-```
-$ npm run lint
-```
-
-### 2.3 测试用例
-```
-$ npm run test:watch
-```
-
-### 2.4 产出资源
-```
-$ npm run build
-```
-
-## 3. 技术栈
-
-- [x] [Webpack](https://webpack.github.io)
-- [x] [React](https://facebook.github.io/react/)
-- [x] [ES6](http://es6.ruanyifeng.com/)
-- [ ] [Redux](https://github.com/rackt/redux)
-- [x] [React-router](https://github.com/rackt/react-router-redux)
-- [x] [Babel](https://babeljs.io/)
-- [ ] [Autoprefixer](https://github.com/postcss/autoprefixer)
-- [ ] [PostCSS](https://github.com/postcss/postcss)
-- [x] [CSS modules](https://github.com/outpunk/postcss-modules)
-- [x] [Eslint](https://github.com/eslint/eslint)
