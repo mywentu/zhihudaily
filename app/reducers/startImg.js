@@ -1,7 +1,7 @@
 import {
   REQUEST_STARTIMG,
   RECEIVE_STARTIMG
-} from '../actions/'
+} from '../actions/fetchStartImg'
 
 const startImg = (state = { isFetching:false }, action ) => {
   switch (action.type) {

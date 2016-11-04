@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as LatestActions from '../../actions/fetchLatest'
+
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'; //provider 部分
 import getMuiTheme from 'material-ui/styles/getMuiTheme'; //配置Theme的主要部分
 import { lightBlue400 } from 'material-ui/styles/colors'; //AppBar 颜色
 
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'; //夜间模式
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'; //白天模式
-
+//大组件
 import AppBar from 'material-ui/AppBar';
-
+import TodayZhihuDaily from '../TodayZhihuDaily/'
+//小组件
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -17,9 +22,8 @@ import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
 import './Main.scss'
-injectTapEventPlugin();
 
-export default class Main extends Component {
+class Main extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -55,8 +59,20 @@ export default class Main extends Component {
                 <MenuItem>日常心理学</MenuItem>
                 <MenuItem>用户推荐日报</MenuItem>
               </Drawer>
+              <TodayZhihuDaily fetchHandle={ this.props.fetchLatest } latest = { this.props.latest }></TodayZhihuDaily>
           </div>
+
         </MuiThemeProvider>
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    latest: state.latest
+  }
+}
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(LatestActions, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

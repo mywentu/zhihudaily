@@ -4,7 +4,13 @@ import { Provider } from 'react-redux';
 import App from './container/App/';
 import './normalize.css';
 import configureStore from './store/configureStore'
+
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
 const store = configureStore()
+
+
 
 ReactDOM.render(
   <Provider store={store}>

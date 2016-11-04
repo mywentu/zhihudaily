@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Loading from '../../component/Loading'
-import * as StartImgActions from '../../actions/'
+import * as StartImgActions from '../../actions/fetchStartImg'
 
 class App extends Component{
   render(){
