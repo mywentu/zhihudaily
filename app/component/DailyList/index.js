@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import {List, ListItem} from 'material-ui/List';
-import ContentInbox from 'material-ui/svg-icons/content/inbox';
-import ActionGrade from 'material-ui/svg-icons/action/grade';
-import ContentSend from 'material-ui/svg-icons/content/send';
-import ContentDrafts from 'material-ui/svg-icons/content/drafts';
 import './dailylist.scss'
-import test from './react.jpg'
+
 export default class DailyList extends Component {
   render(){
+    let proxy = 'http://zhihu.garychang.cn/tiny-pic?img=';
+    const zhihuToday = this.props.stories.map( story => (
+      <ListItem className="item-box" key={story.id}>
+        <div className="item-box-setting">
+          <h1>{story.title}</h1>
+          <img src={proxy+story.images[0]} />
+        </div>
+      </ListItem>
+    ))
     return(
-      <List>
-        
-
-    </List>
+      
+      <List className="list-item">
+        {zhihuToday}
+      </List>
     )
   }
 }

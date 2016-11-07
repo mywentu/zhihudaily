@@ -8,8 +8,6 @@ export default class Slide extends Component {
     super(props)
   }
   render() {
-    console.log(this.props);
-
     let proxy = 'http://zhihu.garychang.cn/tiny-pic?img=';
     const slideString = this.props.top_stories.map( story => (
         <div key={story.id} className="top-stories-img-box">

@@ -26,9 +26,10 @@ class TodayZhihuDaily extends Component {
       )
     }else {
       return (
-        <div>
+        <div className="zhihu-daily">
           <Slide top_stories={this.props.latest.top_stories}/>
-          <DailyList />
+          <h6 className="today-news">今日热闻</h6>
+          <DailyList stories={this.props.latest.stories }/>
         </div>
       )
     }

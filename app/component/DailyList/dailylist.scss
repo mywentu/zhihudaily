@@ -1,7 +1,33 @@
-.item {
-    height: 20vh;
-    width: 100%;
-    .item-text {
-        font-size: 18px;
+.zhihu-daily {
+  background-color: #f3f3f3;
+}
+.today-news {
+  padding-left: 22px;
+}
+.list-item > div{
+      background-color: #fff;
+      margin: 5px 20px;
+      border-radius: 5px;
+      box-shadow: 1px 2px #CECECE;
+}
+
+.item-box {
+    .item-box-setting{
+      height: 10vh;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
     }
+
+    h1{
+      font-size: 18px;
+      width: 75%;
+      line-height: 20px;
+      padding-right:10px;
+
+    }
+    img{
+      width: 25%;
+    }
+
 }
