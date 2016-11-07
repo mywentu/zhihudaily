@@ -3,10 +3,10 @@
     flex-direction: column;
     height: 100vh;
     width: 100%;
-    background-color: #17181A;
+
 
     .zh-img {
-        height: 90vh;
+        height: 85vh;
 
         img {
             width: 100%;
@@ -15,7 +15,7 @@
     }
 
     .zh-quote {
-        height: 10vh;
+        height: 15vh;
         display: flex;
         flex-direction: row;
         .zh-logo {

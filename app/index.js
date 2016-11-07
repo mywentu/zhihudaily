@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './container/App/';
-import './normalize.css';
 import configureStore from './store/configureStore'
 
 import injectTapEventPlugin from 'react-tap-event-plugin';

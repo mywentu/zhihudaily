@@ -1,3 +1,15 @@
 .top-stories-img-box{
-  height: 40vh !important;
+  height: 35vh !important;
+  position: relative;
+  img{
+    margin-bottom: -100px;
+  }
+  div.story-title {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    color: #fff;
+    font-size: 20px;
+    padding: 0px 10px;
+  }
 }

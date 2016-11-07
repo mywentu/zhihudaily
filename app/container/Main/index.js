@@ -21,14 +21,13 @@ import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
-import './Main.scss'
 
 class Main extends Component {
   constructor(props){
     super(props)
     this.state = {
       open: false,
-      theme: darkBaseTheme
+      theme: lightBaseTheme
     }
   }
   handleToggle = () => this.setState({ open: !this.state.open });

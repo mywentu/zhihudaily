@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import logo from './logo.png';
-// import './Loading.css';
 import './Loading.scss'
 
 
@@ -28,7 +27,7 @@ class Loading extends Component {
             this.setState({
                 endStart: true
             })
-        },500)
+        },5000)
     }
     render() {
         // if(this.state.endStart){

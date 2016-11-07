@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import CircularProgress from 'material-ui/CircularProgress'; //wait
 import Slide from '../../component/Slide/'
+import DailyList from '../../component/DailyList/'
 class TodayZhihuDaily extends Component {
   constructor(props){
     super(props)
@@ -7,7 +9,7 @@ class TodayZhihuDaily extends Component {
       isFetching: true
     }
   }
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchHandle()
   }
   componentWillReceiveProps(nextProps) {
@@ -19,12 +21,15 @@ class TodayZhihuDaily extends Component {
     if(this.state.isFetching) {
       return(
         <div>
-          <div>asdada</div>
+           <CircularProgress />
         </div>
       )
     }else {
       return (
-        <Slide />
+        <div>
+          <Slide top_stories={this.props.latest.top_stories}/>
+          <DailyList />
+        </div>
       )
     }
 
