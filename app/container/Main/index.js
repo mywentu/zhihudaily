@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-
-
-
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'; //provider 部分
 import getMuiTheme from 'material-ui/styles/getMuiTheme'; //配置Theme的主要部分
 import { lightBlue400 } from 'material-ui/styles/colors'; //AppBar 颜色
@@ -18,17 +15,39 @@ import RaisedButton from 'material-ui/RaisedButton';
 import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back'
+import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 
+import { browserHistory } from 'react-router'
 
 class Main extends Component {
   constructor(props){
     super(props)
     this.state = {
       open: false,
-      theme: lightBaseTheme
+      theme: lightBaseTheme,
+      leftIcon: <IconButton><NavigationMenu /></IconButton>,
+      leftHandle: this.handleToggle
     }
   }
+  componentWillReceiveProps(nextProps){
+    if(nextProps.locationWhere==="/"){
+      this.setState({
+        leftIcon: <IconButton><NavigationMenu /></IconButton>,
+        leftHandle: this.handleToggle
+      })
+    }else{
+      this.setState({
+        leftIcon: <IconButton><ArrowBack /></IconButton>,
+        leftHandle: browserHistory.goBack
+      })
+    }
+  }
+
+
   handleToggle = () => this.setState({ open: !this.state.open });
+
+
   handleToChangeTheme = (event, child) => {
     if(child.key ==='changeTheme'){
       this.setState({ theme: this.state.theme === lightBaseTheme?darkBaseTheme:lightBaseTheme })
@@ -40,7 +59,9 @@ class Main extends Component {
         <MuiThemeProvider muiTheme={getMuiTheme(this.state.theme)} >
           <div>
             <AppBar title="首页"
-                onLeftIconButtonTouchTap = { this.handleToggle }
+                onLeftIconButtonTouchTap = { this.state.leftHandle }
+                iconElementLeft={ this.state.leftIcon  } //改变appbar 的图标
+
                 iconElementRight={
                   <IconMenu
                       iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}

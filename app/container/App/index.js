@@ -19,24 +19,25 @@ class App extends Component {
     }
 
     render() {
-          const {fetchStartImg, startimg} = this.props
-  
-          if (this.state.endStart) {
-            return (
-              <Main children={ this.props.children } />
-            )
-          }else{
-            return  <Loading fetchStartImg={fetchStartImg} startimg={ startimg } callbackApp={ this.onLoadingChanged } />
-          }
+        const {fetchStartImg, startimg} = this.props
 
+        if (this.state.endStart) {
+            return (<Main children={this.props.children} locationWhere={this.props.location.pathname}/>)
+        } else {
+            return <Loading fetchStartImg={fetchStartImg} startimg={startimg} callbackApp={this.onLoadingChanged}/>
         }
-    }
 
-    function mapStateToProps(state) {
-        return {startimg: state.startImg}
     }
-    function mapDispatchToProps(dispatch) {
-        return bindActionCreators(StartImgActions, dispatch)
-    }
+}
 
-    export default connect(mapStateToProps, mapDispatchToProps)(App);
+function mapStateToProps(state) {
+    return {
+      startimg: state.startImg,
+      routing: state.routing
+    }
+}
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(StartImgActions, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
