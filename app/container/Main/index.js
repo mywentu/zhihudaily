@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as LatestActions from '../../actions/fetchLatest'
+
 
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'; //provider 部分
@@ -36,6 +34,7 @@ class Main extends Component {
       this.setState({ theme: this.state.theme === lightBaseTheme?darkBaseTheme:lightBaseTheme })
     }
   }
+
   render(){
     return (
         <MuiThemeProvider muiTheme={getMuiTheme(this.state.theme)} >
@@ -53,12 +52,14 @@ class Main extends Component {
                       <MenuItem primaryText="设置选项" />
                     </IconMenu>
                 }
+
             />
-              <Drawer open={this.state.open} docked={false}  onRequestChange={(open) => this.setState({open})} >
-                <MenuItem>日常心理学</MenuItem>
-                <MenuItem>用户推荐日报</MenuItem>
-              </Drawer>
-              <TodayZhihuDaily fetchHandle={ this.props.fetchLatest } latest = { this.props.latest }></TodayZhihuDaily>
+            <Drawer open={this.state.open} docked={false}  onRequestChange={(open) => this.setState({open})} >
+              <MenuItem>日常心理学</MenuItem>
+              <MenuItem>用户推荐日报</MenuItem>
+            </Drawer>
+
+              { this.props.children }
           </div>
 
         </MuiThemeProvider>
@@ -66,12 +67,5 @@ class Main extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    latest: state.latest
-  }
-}
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(LatestActions, dispatch)
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+
+export default Main;
