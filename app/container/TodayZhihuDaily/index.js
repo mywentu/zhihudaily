@@ -8,6 +8,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as LatestActions from '../../actions/fetchLatest'
 
+import './circular-parent.scss'
 class TodayZhihuDaily extends Component {
   constructor(props){
     super(props)
@@ -34,9 +35,9 @@ class TodayZhihuDaily extends Component {
   render(){
     if(this.state.isFetching) {
       return(
-        <div>
+        <div className="circular-parent">
            <CircularProgress />
-           <Link to="/post">About</Link>
+
         </div>
       )
     }else {

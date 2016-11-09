@@ -27,19 +27,22 @@ class Main extends Component {
       open: false,
       theme: lightBaseTheme,
       leftIcon: <IconButton><NavigationMenu /></IconButton>,
-      leftHandle: this.handleToggle
+      leftHandle: this.handleToggle,
+      title: '首页'
     }
   }
   componentWillReceiveProps(nextProps){
     if(nextProps.locationWhere==="/"){
       this.setState({
         leftIcon: <IconButton><NavigationMenu /></IconButton>,
-        leftHandle: this.handleToggle
+        leftHandle: this.handleToggle,
+        title: '首页'
       })
     }else{
       this.setState({
         leftIcon: <IconButton><ArrowBack /></IconButton>,
-        leftHandle: browserHistory.goBack
+        leftHandle: browserHistory.goBack,
+        title: ''
       })
     }
   }
@@ -58,7 +61,7 @@ class Main extends Component {
     return (
         <MuiThemeProvider muiTheme={getMuiTheme(this.state.theme)} >
           <div>
-            <AppBar title="首页"
+            <AppBar title={this.state.title}
                 onLeftIconButtonTouchTap = { this.state.leftHandle }
                 iconElementLeft={ this.state.leftIcon  } //改变appbar 的图标
 

@@ -15,14 +15,14 @@ export default class Slide extends Component {
         <div key={story.id} className="top-stories-img-box" onTouchTap={ this.props.handleTest.bind(this, story.id) } >
           <img src={ proxy + story.image}   />
           <div className="story-title">
-            <a href="#"  >{story.title}</a>
+            <h3>{story.title}</h3>
           </div>
         </div>
         )
       );
 
      return (
-         <Carousel >
+         <Carousel autoplay>
            { slideString }
          </Carousel>
 
