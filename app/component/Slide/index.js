@@ -7,18 +7,13 @@ import './slide.scss';
 export default class Slide extends Component {
   constructor(props){
     super(props)
-        this.handleTest=this.handleTest.bind(this);
-  }
-
-  handleTest(){
-    console.log('adasdasd');
   }
 
   render() {
     let proxy = 'http://zhihu.garychang.cn/tiny-pic?img=';
     const slideString = this.props.top_stories.map( story => (
-        <div key={story.id} className="top-stories-img-box" >
-          <img src={ proxy + story.image}  onTouchTap={ this.handleTest } />
+        <div key={story.id} className="top-stories-img-box" onTouchTap={ this.props.handleTest.bind(this, story.id) } >
+          <img src={ proxy + story.image}   />
           <div className="story-title">
             <a href="#"  >{story.title}</a>
           </div>

@@ -25,7 +25,7 @@ ReactDOM.render(
     <Router history={history}>
       <Route path='/' component={App}>
         <IndexRoute component={TodayZhihuDaily} />
-        <Router path='/post' component={DetailZhihuDaily} />
+        <Router path='post/:id' component={DetailZhihuDaily} />
       </Route>
     </Router>
   </Provider>,

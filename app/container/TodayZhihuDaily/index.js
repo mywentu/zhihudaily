@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import CircularProgress from 'material-ui/CircularProgress'; //wait
 import Slide from '../../component/Slide/'
 import DailyList from '../../component/DailyList/'
-import { Link } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -14,6 +14,7 @@ class TodayZhihuDaily extends Component {
     this.state = {
       isFetching: true
     }
+    this.handleTest=this.handleTest.bind(this)
   }
   componentDidMount() {
     this.props.fetchLatest()
@@ -23,6 +24,12 @@ class TodayZhihuDaily extends Component {
       isFetching: nextProps.latest.isFetching
     })
   }
+
+  handleTest(id){
+    browserHistory.push(`/post/${id}`)
+  }
+
+
 
   render(){
     if(this.state.isFetching) {
@@ -35,9 +42,9 @@ class TodayZhihuDaily extends Component {
     }else {
       return (
         <div className="zhihu-daily" >
-          <Slide top_stories={this.props.latest.top_stories}/>
+          <Slide top_stories={this.props.latest.top_stories} handleTest={this.handleTest }/>
           <h6 className="today-news">今日热闻</h6>
-          <DailyList stories={this.props.latest.stories } onClick={this.handleScroll }/>
+          <DailyList stories={this.props.latest.stories } handleTest={this.handleTest } />
         </div>
       )
     }
