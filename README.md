@@ -29,5 +29,5 @@ $ npm install
 $ npm run dev
 ```
 
-##运行特别说明！
+## 运行特别说明！
 由于请求了知乎的日报，所有的API都是跨域请求。本来用nginx反向代理，总是没有成功。后来`JSON`用的[CORS Toggle](https://chrome.google.com/webstore/detail/cors-toggle/omcncfnpmcabckcddookmnajignpffnh)这个chrome插件，否则不能请求数据。图片403错误盗链用[garychang](http://zhihu.garychang.cn/)这个大兄弟的服务器代理。
