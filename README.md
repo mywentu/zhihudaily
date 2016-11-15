@@ -17,8 +17,7 @@
 - UI使用的[Material-UI](http://www.material-ui.com/),目前是React.js开源组件库中最受欢迎的
 
 ## React脚手架
-本项目使用的脚手架是[GuoYongfeng/webpack-dev-boilerplate](https://github.com/GuoYongfeng/webpack-dev-boilerplate)
-，我在其webpack中添加了对`scss`的支持。脚手架具体的特性去看大神的Github
+本项目使用的脚手架是[webpack-dev-boilerplate](https://github.com/mywentu/webpack-dev-boilerplate)
 
 ## 运行
 想要在本地运行,执行以下命令行,执行完后将会自动打开浏览器，就阔以啦。
